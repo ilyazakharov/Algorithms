@@ -1,15 +1,13 @@
 ﻿namespace Algorithms.Sorting
 {
-    internal class SelectionSort<T> : ISort<T> where T : IComparable
+    public class SelectionSort<T> : ISort<T> where T : IComparable
     {
         public List<T> Sort(List<T> list)
         {
-            List<T> result = list;
-
-            int min = 0;
-            for (int i = 0; i < result.Count; i++)
+            List<T> result = new(list);
+            for (int i = 0; i < result.Count - 1; i++)
             {
-                min = i;
+                int min = i;
 
                 for (int j = i + 1; j < result.Count; j++)
                 {
@@ -20,9 +18,7 @@
                 }
                 if (i != min)
                 {
-                    T buf = result[i];
-                    result[i] = result[min];
-                    result[min] = buf;
+                    (result[i], result[min]) = (result[min], result[i]);
                 }
             }
             return result;

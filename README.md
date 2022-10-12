@@ -1,3 +1,4 @@
 # Algorithms
 ## BinarySearch
 ## SelectionSort
+## InsertionSort

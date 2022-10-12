@@ -2,6 +2,8 @@
 {
     public class SelectionSort<T> : ISort<T> where T : IComparable
     {
+        // Finds and moves a minimum value {} to the left
+        //(30,20,10,5)-({5},20,10,30)-(5,{10},20,30)-(5,10,{20},30)
         public List<T> Sort(List<T> list)
         {
             List<T> result = new(list);

@@ -7,7 +7,7 @@ Sort();
 static void Sort()
 {
     List<int> list = new List<int>() { 50, 1, 50, -506, 48947 };
-    ISort<int> sort = new InsertionSort<int>();
+    ISort<int> sort = new BubbleSort<int>();
     List<int> res = sort.Sort(list);
 
     Console.WriteLine(String.Join(",", list));

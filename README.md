@@ -2,3 +2,4 @@
 ## BinarySearch
 ## SelectionSort
 ## InsertionSort
+## BubbleSort

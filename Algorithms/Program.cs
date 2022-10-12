@@ -1,6 +1,19 @@
 ﻿using Algorithms.Searching;
+using Algorithms.Sorting;
+using System.Runtime.CompilerServices;
 
-ISearch<int> search = new BinarySearch<int>();
+Sort();
 
-var val = search.FindValue(new List<int>() { 10, 11, 20 }, 14);
-Console.WriteLine(val);
+static void Sort()
+{
+    ISort<int> sort = new SelectionSort<int>();
+    List<int> res = sort.Sort(new List<int>() {50, 1, 50, -506, 48947});
+    Console.WriteLine(String.Join(",", res));
+}
+
+static void Search()
+{
+    ISearch<int> search = new BinarySearch<int>();
+    var val = search.FindValue(new List<int>() { 10, 11, 20 }, 14);
+    Console.WriteLine(val);
+}

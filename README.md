@@ -3,3 +3,4 @@
 ## SelectionSort
 ## InsertionSort
 ## BubbleSort
+## QuickSort

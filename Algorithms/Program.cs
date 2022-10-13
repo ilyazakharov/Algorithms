@@ -2,16 +2,36 @@
 using Algorithms.Sorting;
 using System.Runtime.CompilerServices;
 
-Sort();
-
-static void Sort()
+List<List<int>> lists = new()
 {
-    List<int> list = new List<int>() { 50, 1, 50, -506, 48947 };
-    ISort<int> sort = new BubbleSort<int>();
+    new(),
+    new(){0},
+    new(){0,1},
+    new(){1,0},
+    new(){1,5,9},
+    new(){9,5,1},
+    new(){9,1,5},
+    new(){5,1,9},
+    new(){1,1,1},
+    new(){1,1,2},
+    new(){1,2,1},
+    new(){2,1,1},
+    new(){50, 1, 50, -506, 48947 },
+};
+
+lists.ForEach(l =>
+{
+    Sort(l);
+    Console.WriteLine();
+});
+
+static void Sort(List<int> list)
+{
+    ISort<int> sort = new QuickSort<int>();
     List<int> res = sort.Sort(list);
 
-    Console.WriteLine(String.Join(",", list));
-    Console.WriteLine(String.Join(",", res));
+    Console.Write(String.Join(",", list));
+    Console.Write($" --- {String.Join(",", res)}");
 }
 
 static void Search()

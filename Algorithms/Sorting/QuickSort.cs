@@ -2,6 +2,8 @@
 {
     public class QuickSort<T> : ISort<T> where T : IComparable
     {
+        //{}-wall
+        //(30,10,50,15)-({30},10,50,15)-(10,{30},50,15)-(10,15,{50},30)-(10,15,30,50)
         public List<T> Sort(List<T> list)
         {
             if (list == null)

@@ -1,9 +1,27 @@
-﻿using Algorithms.Recursion;
+﻿using Algorithms.Graphs;
+using Algorithms.Recursion;
 using Algorithms.Searching;
 using Algorithms.Sorting;
-using System.Runtime.CompilerServices;
 
-TestRecursive();
+TestBreadthFirstSearch();
+
+static void TestBreadthFirstSearch()
+{
+    BreadthFirstSearch bfs = new();
+    List<List<int>> labirinth = new List<List<int>>()
+    {
+        new List<int>() { 1,1,1,1,0,0,0 },
+        new List<int>() { 2,0,0,1,0,1,0 },
+        new List<int>() { 1,1,0,0,0,1,0 },
+        new List<int>() { 1,0,0,1,1,1,0 },
+        new List<int>() { 1,0,1,1,3,1,0 },
+        new List<int>() { 0,0,0,0,0,0,0 },
+    };
+
+    List<List<int>> res = bfs.BFSGetExitFromLabirinth(labirinth);
+
+    res.ForEach(x => { Console.WriteLine(string.Join(" ", x)); });
+}
 
 static void Sort(List<int> list)
 {

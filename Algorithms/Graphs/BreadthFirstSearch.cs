@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms.Graphs
+﻿namespace Algorithms.Graphs
 {
     public class BreadthFirstSearch
     {
+        // BFS checks whether a nearest neighbour is the one you need. If not it takes nearest neighbours of your neighboars and goes on until the end.
+        // BFS usually uses Queue
         // 1 - wall, 0 - way, 2 - entrance, 3 - exit, 8 - your way.
-        // Example:    Result:
+        // Example:       Result:
         // 1 1 1 1 1 1 1  1 1 1 1 1 1 1
         // 2 0 0 1 1 1 1  8 8 8 1 1 1 1
         // 1 1 0 0 1 1 0  1 1 8 8 1 1 0 
@@ -107,21 +102,25 @@ namespace Algorithms.Graphs
                         }
 
                         links[key] = new();
+                        // neighbour above
                         if (i != 0 && (labirinth[i - 1][j] == 0 || labirinth[i - 1][j] > 1))
                         {
                             links[key].Add((i - 1).ToString() + "-" + j.ToString());
                         }
 
+                        // neighbour from the left
                         if (j != 0 && (labirinth[i][j - 1] == 0 || labirinth[i][j - 1] > 1))
                         {
                             links[key].Add(i.ToString() + "-" + (j - 1).ToString());
                         }
 
+                        // neighbour from the right
                         if (j != labirinth[i].Count - 1 && (labirinth[i][j + 1] == 0 || labirinth[i][j + 1] > 1))
                         {
                             links[key].Add(i.ToString() + "-" + (j + 1).ToString());
                         }
 
+                        // neighbour beneath
                         if (i != labirinth.Count - 1 && (labirinth[i + 1][j] == 0 || labirinth[i + 1][j] > 1))
                         {
                             links[key].Add((i + 1).ToString() + "-" + j.ToString());

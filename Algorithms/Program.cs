@@ -3,7 +3,24 @@ using Algorithms.Recursion;
 using Algorithms.Searching;
 using Algorithms.Sorting;
 
-TestBreadthFirstSearch();
+TestDijkstrasAlgorithm();
+
+static void TestDijkstrasAlgorithm()
+{
+    Dictionary<string, Dictionary<string, int>> cities = new()
+    {
+        {"A", new() { {"B", 7}, {"C", 2} } },
+        {"B", new() { {"D", 5}, {"E", 1} } },
+        {"E", new() { {"B", 1} } }, // loop B<->E
+        {"C", new() { {"B", 2}, {"D", 10} } },
+        {"D", new() },
+    };
+
+    DijkstrasAlgorithm da = new();
+    KeyValuePair<string, string> res = da.ShortestWayBetweenCities(cities, "A", "D");
+    Console.WriteLine(res);
+
+}
 
 static void TestBreadthFirstSearch()
 {

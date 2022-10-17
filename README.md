@@ -1,12 +1,16 @@
 # Algorithms
 ## Search
-### Binary search
+Binary search    
 ## Sort
-### Selection sort
-### Insertion sort
-### Bubble sort
-### Quick sort
-## Recursive function
+Selection sort    
+Insertion sort    
+Bubble sort    
+Quick sort    
+## Recursive functions
+Sum    
+Count    
+Maximum    
+Binary search    
 ## Graphs
-### Breadth first search
-### Dijkstra's algorithm
+Breadth first search    
+Dijkstra's algorithm    

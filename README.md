@@ -14,3 +14,4 @@ Binary search
 ## Graphs
 Breadth first search    
 Dijkstra's algorithm    
+## Dynamic programming

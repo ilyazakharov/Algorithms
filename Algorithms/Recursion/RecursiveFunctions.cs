@@ -1,7 +1,41 @@
-﻿namespace Algorithms.Recursion
+﻿using System.Text;
+
+namespace Algorithms.Recursion
 {
     public class RecursiveFunctions
     {
+        public static string CountAndSay(int n)
+        {
+            if (n == 1)
+            {
+                return "1";
+            }
+
+            StringBuilder res = new();
+            char prev = '\0';
+            int count = 0;
+
+            foreach (char c in CountAndSay(n - 1))
+            {
+                if (prev == c)
+                {
+                    count++;
+                }
+                else
+                {
+                    if (count != 0)
+                    {
+                        res.Append(count.ToString() + prev);
+                    }
+                    prev = c;
+                    count = 1;
+                }
+            }
+
+            res.Append(count.ToString() + prev);
+            return res.ToString();
+        }
+
         public static int Sum(List<int> vals)
         {            
             if (vals == null)

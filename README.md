@@ -11,6 +11,7 @@ Sum
 Count    
 Maximum    
 Binary search    
+Count and say (https://leetcode.com/problems/count-and-say/)    
 ## Graphs
 Breadth first search    
 Dijkstra's algorithm    

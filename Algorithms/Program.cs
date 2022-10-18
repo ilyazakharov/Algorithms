@@ -4,7 +4,7 @@ using Algorithms.Recursion;
 using Algorithms.Searching;
 using Algorithms.Sorting;
 
-TestDP();
+TestRecursive();
 
 static void TestDP()
 {
@@ -54,6 +54,9 @@ static void TestRecursive()
     int count = RecursiveFunctions.Count(list);
     int? max = RecursiveFunctions.Max(list);
 
+    int num = 4;
+    string countAndSay = RecursiveFunctions.CountAndSay(num);
+
     int val = 2;
     list.Sort();
     int found = RecursiveFunctions.BinarySearch(list, val);
@@ -63,6 +66,7 @@ static void TestRecursive()
     Console.WriteLine($"Count of [{String.Join(",", list)}] equals {count}");
     Console.WriteLine($"Maximum value in [{String.Join(",", list)}] is {max}");
     Console.WriteLine($"Number of element with value {val} in [{String.Join(",", list)}] is {foundStr}");
+    Console.WriteLine($"The count and say value for {num} is {countAndSay}");
 }
 
 static void TestSort()
